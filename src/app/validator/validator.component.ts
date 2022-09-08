@@ -52,3 +52,21 @@ export class ValidatorComponent implements OnInit {
 }
 
 //https://github.com/angular/angular/issues/46405
+//https://stackoverflow.com/questions/52771445/best-way-to-show-error-messages-for-angular-reactive-forms-one-formcontrol-mult
+
+// <input type="text" id="name" class="form-control"
+//       formControlName="name" required>
+
+// <div *ngIf="name.invalid && (name.dirty || name.touched)"
+//     class="alert alert-danger">
+
+//   <div *ngIf="name.errors?.['required']">
+//     Name is required.
+//   </div>
+//   <div *ngIf="name.errors?.['minlength']">
+//     Name must be at least 4 characters long.
+//   </div>
+//   <div *ngIf="name.errors?.['forbiddenName']">
+//     Name cannot be Bob.
+//   </div>
+// </div>
