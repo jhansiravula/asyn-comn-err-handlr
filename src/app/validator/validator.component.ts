@@ -1,5 +1,16 @@
-import { NgModule, Component, ContentChild, OnInit, AfterViewInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, FormControlName, NgForm } from '@angular/forms';
+import {
+  NgModule,
+  Component,
+  ContentChild,
+  OnInit,
+  AfterViewInit,
+} from '@angular/core';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  FormControlName,
+  NgForm,
+} from '@angular/forms';
 
 @Component({
   selector: '[validator]',
@@ -23,22 +34,21 @@ import { FormsModule, ReactiveFormsModule, FormControlName, NgForm } from '@angu
     <div *ngIf="formControl.status === 'VALID'">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Antu_task-complete.svg/768px-Antu_task-complete.svg.png"> Good
      </div>
-`, 
-styles: [
-  `
+`,
+  styles: [
+    `
     img {
       width: 20px;
       height: 20px;
     }
-  `
-]})
-
+  `,
+  ],
+})
 export class ValidatorComponent implements OnInit {
-   @ContentChild(FormControlName) formControl;
-   constructor(private form: NgForm) { 
+  @ContentChild(FormControlName) formControl;
+  constructor(private form: NgForm) {}
 
-   }
-
-   ngOnInit() { }
-
+  ngOnInit() {}
 }
+
+//https://github.com/angular/angular/issues/46405
